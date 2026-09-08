@@ -1,0 +1,99 @@
+{
+  "dataset": "NYC TLC 2024 yellow taxi January-June",
+  "months": [
+    {
+      "month": 1,
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet",
+      "sha256": "c4d59da7bbc8abaeeeb1727947ee93d9891a71acb42854bd80db1571b2030510",
+      "source_rows": 2964624,
+      "valid_pickups": 2952588,
+      "excluded_wrong_month_or_unknown_zone": 12036
+    },
+    {
+      "month": 2,
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-02.parquet",
+      "sha256": "c76c43c18c6c6664080dd920baab4928988d5786a6b65980792ca7cd796f9f20",
+      "source_rows": 3007526,
+      "valid_pickups": 2996418,
+      "excluded_wrong_month_or_unknown_zone": 11108
+    },
+    {
+      "month": 3,
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-03.parquet",
+      "sha256": "2d4cdc8fb96726cdd3803b13b02d2e61e71d45720aff0ebc693a8bdd1f249823",
+      "source_rows": 3582628,
+      "valid_pickups": 3568957,
+      "excluded_wrong_month_or_unknown_zone": 13671
+    },
+    {
+      "month": 4,
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-04.parquet",
+      "sha256": "ce37f736c7cf9e92164c850ef2b502a8f7bb590fc1804b6edbcb80293da01b89",
+      "source_rows": 3514289,
+      "valid_pickups": 3501432,
+      "excluded_wrong_month_or_unknown_zone": 12857
+    },
+    {
+      "month": 5,
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-05.parquet",
+      "sha256": "1974230be2b5a3ea92e47b5eb77f32dbf1de896d81ad8df4ab6faba52749ad23",
+      "source_rows": 3723833,
+      "valid_pickups": 3709937,
+      "excluded_wrong_month_or_unknown_zone": 13896
+    },
+    {
+      "month": 6,
+      "url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-06.parquet",
+      "sha256": "677cf14c8347f745b583f012fbdba072334c6c4efa17bfd6a64369f2ba30329c",
+      "source_rows": 3539193,
+      "valid_pickups": 3525628,
+      "excluded_wrong_month_or_unknown_zone": 13565
+    }
+  ],
+  "source_rows": 20332093,
+  "valid_pickups": 20254960,
+  "selected_zones": [
+    43,
+    48,
+    68,
+    79,
+    90,
+    100,
+    107,
+    113,
+    114,
+    132,
+    138,
+    140,
+    141,
+    142,
+    161,
+    162,
+    163,
+    164,
+    170,
+    186,
+    229,
+    230,
+    234,
+    236,
+    237,
+    238,
+    239,
+    246,
+    249,
+    263
+  ],
+  "selected_zone_count": 30,
+  "zone_selection": "Top zones by pickup count in January-March only",
+  "selected_zone_pickups": 16161373,
+  "hourly_rows": 131040,
+  "selected_zone_share": 0.7978970583007816,
+  "sha256_hourly": "1a25501aacc7fed877385af6585af4f9b0d5a7061570b10820c3f565ae5a5a1f",
+  "limitations": [
+    "Only yellow taxis, not all NYC transport demand",
+    "Zero filled means zero recorded pickups, not verified zero true demand",
+    "Provider timestamps treated as local wall clock, daylight-saving ambiguity not resolved",
+    "TLC does not guarantee accuracy or completeness of source records"
+  ]
+}
