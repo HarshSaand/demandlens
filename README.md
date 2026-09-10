@@ -6,6 +6,12 @@ The project focuses on time-aware validation and honest uncertainty, not a claim
 
 ![Real-data forecast and interval evaluation](outputs/forecast-evaluation.png)
 
+## Dataset at a glance
+
+Six monthly **NYC TLC yellow-taxi Parquet files (January–June 2024)** contain **20,332,093 raw trip records**. A source item is a trip with a pickup time and location; cleaning retains 20,254,960 valid-month/known-zone pickups. Aggregation converts these into **131,040 rows of zone × hour pickup counts** for 30 training-selected busy zones, including hours with zero pickups.
+
+The two chronological folds test **May and June separately**, totalling **43,920 future zone-hours**. Earlier windows supply training, development and interval calibration; exact counts are in the fold table below. These counts measure recorded yellow-taxi pickups in selected zones, not all travel demand. Raw files and derived hourly tables are not committed to Git.
+
 ## Technical snapshot
 
 | Question | Implementation |
