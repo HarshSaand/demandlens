@@ -1,5 +1,30 @@
 # DemandLens — Demand Forecasting With Uncertainty
 
+## Actual output example
+
+![A day-ahead zone forecast you can inspect.](docs/output-showcase.png)
+
+**Input:** Historical zone-hour pickup counts and calendar. **Output:** Hourly pickup forecast and calibrated interval.
+
+LightGBM forecast from the saved May fold. Uses history available before the forecast day; observed counts are retrospective. No staffing savings or live deployment claim.
+
+[Inspect the full output record and source hashes](docs/output-example.json) · [Open the standalone review page](docs/output-showcase.html) · [Original dataset](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+
+### Reproduce this example
+
+Follow the project setup/data steps below first. `--source` points to a reproduced project directory with its local data, saved predictions or checkpoints; use `.` when running in that directory. The exporter never silently invents missing inputs.
+
+```bash
+python docs/extract_showcase.py --source /path/to/reproduced/project
+python docs/render_showcase.py
+# Open docs/output-showcase.html directly, or capture the image with Chrome:
+npm install --no-save playwright
+node docs/capture_showcase.mjs
+```
+
+The JSON records the exact source-relative filenames, SHA-256 hashes and code revision. Rendering uses saved values; displayed decimals are rounded only for readability. Raw datasets and model checkpoints remain outside this documentation bundle.
+
+
 DemandLens asks an operational question: **how many pickups should we expect tomorrow, and where do forecast intervals stop being reliable?** It aggregates real NYC yellow-taxi records into hourly zone counts, trains count and quantile models, and evaluates frozen models across successive future months.
 
 The project focuses on time-aware validation and honest uncertainty, not a claim of deployed fleet optimization. It compares trained models with simple seasonal baselines and exposes changes in interval coverage under temporal shift. The scope is yellow-taxi pickup records in 30 training-selected busy zones, not total transport demand or a staffing guarantee.

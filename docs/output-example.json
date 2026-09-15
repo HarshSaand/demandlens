@@ -1,0 +1,154 @@
+{
+  "title": "DemandLens",
+  "subtitle": "A day-ahead zone forecast you can inspect",
+  "eyebrow": "ACTUAL HELD-OUT MODEL OUTPUT",
+  "context": "NYC TLC zone 43 · 1 May 2024 · first 8 hours",
+  "columns": [
+    "Hour",
+    "Predicted pickups",
+    "90% interval",
+    "Observed pickups"
+  ],
+  "rows": [
+    [
+      "00:00",
+      "5.0",
+      "0.5 – 10.2",
+      "7"
+    ],
+    [
+      "01:00",
+      "4.0",
+      "0.0 – 9.6",
+      "2"
+    ],
+    [
+      "02:00",
+      "4.4",
+      "0.0 – 9.6",
+      "0"
+    ],
+    [
+      "03:00",
+      "4.0",
+      "0.0 – 9.6",
+      "1"
+    ],
+    [
+      "04:00",
+      "4.6",
+      "0.0 – 9.6",
+      "5"
+    ],
+    [
+      "05:00",
+      "5.5",
+      "0.5 – 10.8",
+      "4"
+    ],
+    [
+      "06:00",
+      "14.6",
+      "5.0 – 21.4",
+      "15"
+    ],
+    [
+      "07:00",
+      "41.4",
+      "21.6 – 58.4",
+      "74"
+    ]
+  ],
+  "raw": [
+    {
+      "hour": "2024-05-01 00:00:00",
+      "zone": 43,
+      "count": 7,
+      "pred": 4.987625101190404,
+      "lo": 0.5475787645596227,
+      "hi": 10.208893797653696,
+      "fold": "may"
+    },
+    {
+      "hour": "2024-05-01 01:00:00",
+      "zone": 43,
+      "count": 2,
+      "pred": 3.9933462952052543,
+      "lo": 0.0,
+      "hi": 9.644311247897749,
+      "fold": "may"
+    },
+    {
+      "hour": "2024-05-01 02:00:00",
+      "zone": 43,
+      "count": 0,
+      "pred": 4.399003309340567,
+      "lo": 0.0,
+      "hi": 9.644311247897749,
+      "fold": "may"
+    },
+    {
+      "hour": "2024-05-01 03:00:00",
+      "zone": 43,
+      "count": 1,
+      "pred": 3.9933462952052543,
+      "lo": 0.0,
+      "hi": 9.644311247897749,
+      "fold": "may"
+    },
+    {
+      "hour": "2024-05-01 04:00:00",
+      "zone": 43,
+      "count": 5,
+      "pred": 4.623576624192856,
+      "lo": 0.0,
+      "hi": 9.644311247897749,
+      "fold": "may"
+    },
+    {
+      "hour": "2024-05-01 05:00:00",
+      "zone": 43,
+      "count": 4,
+      "pred": 5.494094468816183,
+      "lo": 0.5369979974222576,
+      "hi": 10.757414747751483,
+      "fold": "may"
+    },
+    {
+      "hour": "2024-05-01 06:00:00",
+      "zone": 43,
+      "count": 15,
+      "pred": 14.614412868292552,
+      "lo": 5.028705070346638,
+      "hi": 21.446276678261036,
+      "fold": "may"
+    },
+    {
+      "hour": "2024-05-01 07:00:00",
+      "zone": 43,
+      "count": 74,
+      "pred": 41.380402280427646,
+      "lo": 21.566526397094634,
+      "hi": 58.36306546422138,
+      "fold": "may"
+    }
+  ],
+  "note": "LightGBM forecast from the saved May fold. Uses history available before the forecast day; observed counts are retrospective. No staffing savings or live deployment claim.",
+  "input": "Historical zone-hour pickup counts and calendar",
+  "output": "Hourly pickup forecast and calibrated interval",
+  "sources": [
+    {
+      "path": "data/predictions.parquet",
+      "sha256": "9d39b7922eec508653d55f9d5f7febe9676140c1f1c80eabb44fdc3c6b0f55f4"
+    },
+    {
+      "path": "outputs/provenance.json",
+      "sha256": "3f6920d8c53ce6c4af3aa7314b2af246b57f91001cbb9bb9677dac83bfa6c6bc"
+    }
+  ],
+  "source_repository": "https://github.com/HarshSaand/demandlens",
+  "extraction": "python docs/extract_showcase.py --source /path/to/reproduced/project",
+  "dataset_url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+  "source_code_commit": "946483b302b6492c2178020cb7e7c1294e06a517",
+  "extractor_sha256": "552fba89a585f29a301c30df6c79acec10ea4752ea740373e40be183bf803e51"
+}
