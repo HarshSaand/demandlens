@@ -1,5 +1,7 @@
 # DemandLens — Demand Forecasting With Uncertainty
 
+[Read the project report (PDF)](docs/PROJECT_REPORT.pdf) · [Explore the explanation and flow diagram](docs/PROJECT_REPORT.md)
+
 ## Actual output example
 
 ![A day-ahead zone forecast you can inspect.](docs/output-showcase.png)
